@@ -43,15 +43,6 @@ def play_week():
 
 
 
-
-
-play_week()
-
-
-
-
-
-
 def decide_winners(played_tickets, lucky_numbers):
     right_guesses = [0,0,0,0,0,0,0]
     for i in played_tickets:
