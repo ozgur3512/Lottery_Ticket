@@ -1,6 +1,3 @@
-
-
-
 import random
 
 
@@ -43,6 +40,10 @@ def play_week():
 
 
 
+
+
+
+
 def decide_winners(played_tickets, lucky_numbers):
     right_guesses = [0,0,0,0,0,0,0]
     for i in played_tickets:
@@ -58,13 +59,13 @@ def decide_winners(played_tickets, lucky_numbers):
 
 
 
-shared=weeklyRevenue*0.55
-dropBox=weeklyRevenue*0.45
+
 
 def prize_payout(winners):
-    global shared
+    global weeklyRevenue
     global dropBox
     global broughtForward
+    shared=weeklyRevenue*0.55
     x=0
     if(winners[-1]==0):
         broughtForward+=shared*prizePercentage[-1]
@@ -93,11 +94,14 @@ def prize_payout(winners):
 def play_year():
     global weeklyRevenue
     global dropBox
+
     six_founders=0
     for i in range(1,13):
         for j in range(1,5):
             lucky_numbers = draw()
             played_tickets = play_week()
+
+            dropBox = weeklyRevenue * 0.45
             print("MONTH : {}".format(i))
             print("WEEK : {}".format(j))
             print("Weekly revenue : {}".format(weeklyRevenue))
